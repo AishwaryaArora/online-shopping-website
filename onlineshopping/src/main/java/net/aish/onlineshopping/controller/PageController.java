@@ -6,14 +6,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.aish.onlineshopping.exception.ProductNotFoundException;
 import net.aish.onlineshoppingbackend.dao.CategoryDAO;
+import net.aish.onlineshoppingbackend.dao.ProductDAO;
 import net.aish.onlineshoppingbackend.dto.Category;
+import net.aish.onlineshoppingbackend.dto.Product;
 
 @Controller
 public class PageController {
 
 	@Autowired
 	private CategoryDAO categoryDAO;
+	
+	@Autowired
+	private ProductDAO productDAO;
 	
 	
 	
@@ -57,13 +63,13 @@ public class PageController {
 	}
 	
 	
-	@RequestMapping(value="/category")
+	/*@RequestMapping(value="/category")
 	public ModelAndView category() {		
 		ModelAndView mv = new ModelAndView("page");	
 		mv.addObject("title","Category");
 		mv.addObject("userClickCategory",true);
 		return mv;
-	}
+	}*/
 	
 	@RequestMapping(value="/register")
 	public ModelAndView register() {		
@@ -88,5 +94,35 @@ public class PageController {
 		mv.addObject("userClickAbout",true);
 		return mv;
 	}
+	
+	/*
+	 * Viewing a single product
+	 * */
+	
+	@RequestMapping(value = "/show/{id}/product") 
+	public ModelAndView showSingleProduct(@PathVariable int id) throws ProductNotFoundException 
+	{
+		
+		ModelAndView mv = new ModelAndView("page");
+		
+		Product product = productDAO.get(id);
+		
+		if(product == null) throw new ProductNotFoundException();
+		
+		// update the view count
+		product.setViews(product.getViews() + 1);
+		productDAO.update(product);
+		//---------------------------
+		
+		mv.addObject("title", product.getName());
+		mv.addObject("product", product);
+		
+		mv.addObject("userClickShowProduct", true);
+		
+		
+		return mv;
+		
+	}
+	
 	
 }

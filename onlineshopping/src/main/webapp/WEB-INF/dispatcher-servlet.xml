@@ -12,7 +12,7 @@ http://www.springframework.org/schema/mvc
 
 	
 
-	<context:component-scan base-package="net.aish.onlineshopping.controller"></context:component-scan>
+	<context:component-scan base-package="net.aish.onlineshopping"></context:component-scan>
 	<context:component-scan base-package="net.aish.onlineshoppingbackend"></context:component-scan>
 	
 	
