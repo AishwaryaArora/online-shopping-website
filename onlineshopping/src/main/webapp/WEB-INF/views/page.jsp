@@ -31,7 +31,7 @@
 
 <script>
 	window.menu = '${title}';
-	
+
 	window.contextRoot = '${contextRoot}'
 </script>
 
@@ -93,10 +93,15 @@
 				<!-- Page Content -->
 				<%@include file="about.jsp"%>
 			</c:if>
-			
+
 			<c:if test="${userClickShowProduct == true}">
 				<!-- Page Content -->
 				<%@include file="singleProduct.jsp"%>
+			</c:if>
+
+			<c:if test="${userClickManageProducts == true}">
+				<!-- Page Content -->
+				<%@include file="manageProducts.jsp"%>
 			</c:if>
 
 		</div>
@@ -109,11 +114,11 @@
 
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.js"></script>
-		
+
 		<script src="${js}/bootstrap.bundle.min.js"></script>
-		
+
 		<script src="${js}/jquery.dataTables.js"></script>
-		
+
 		<script src="${js}/dataTables.bootstrap4.js"></script>
 
 		<!-- self coded js for myapp.js -->
