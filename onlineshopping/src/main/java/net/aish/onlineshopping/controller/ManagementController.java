@@ -2,14 +2,20 @@ package net.aish.onlineshopping.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.aish.onlineshopping.util.FileUploadUtility;
 import net.aish.onlineshoppingbackend.dao.CategoryDAO;
 import net.aish.onlineshoppingbackend.dao.ProductDAO;
 import net.aish.onlineshoppingbackend.dto.Category;
@@ -51,11 +57,40 @@ public class ManagementController {
 	
 	//handling product submission
 		@RequestMapping(value="/products", method=RequestMethod.POST)
-		public String handleProductSubmission(@ModelAttribute("product") Product mProduct){
+		public String handleProductSubmission(@Valid @ModelAttribute("product") Product mProduct, BindingResult results, Model model, HttpServletRequest request)
+		{
+			
+			// check if there are any errors
+			if(results.hasErrors()) {
+					
+				model.addAttribute("userClickManageProducts", true);
+				model.addAttribute("title", "Manage Products");
+				model.addAttribute("message", "Validation failed for Product Submission!");
+							
+				return "page";
+			}
+			
+			
 			
 			//create a new product record
 			
 			productDAO.add(mProduct);
+			
+			
+			/*if(mProduct.getId() == 0) {
+				// create a new product record if id is 0
+				productDAO.add(mProduct);
+			}
+			else {
+				// update the product if id is not 0
+				productDAO.update(mProduct);
+			}*/
+			
+			
+			if(!mProduct.getFile().getOriginalFilename().equals("")) {
+				FileUploadUtility.uploadFile(request, mProduct.getFile(), mProduct.getCode());
+			}	
+			
 			
 			
 			return "redirect:/manage/products?operation=product";

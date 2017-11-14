@@ -32,7 +32,8 @@
 
 						<!-- Form Elements -->
 						<sf:form class="form-horizontal" modelAttribute="product"
-							action="${contextRoot}/manage/products" method="POST">
+							action="${contextRoot}/manage/products" method="POST"
+							enctype="multipart/form-data">
 
 							<div class="form-control no-border">
 								<div class="row">
@@ -41,7 +42,7 @@
 									<div class="col-md-8">
 										<sf:input type="text" path="name" id="name"
 											placeholder="Product Name" class="form-control" />
-										<em class="help-block">Please Enter Product Name!</em>
+										<sf:errors path="name" cssClass="help-block" element="em"></sf:errors>
 
 									</div>
 								</div>
@@ -57,7 +58,7 @@
 									<div class="col-md-8">
 										<sf:input type="text" path="brand" id="brand"
 											placeholder="Brand Name" class="form-control" />
-										<em class="help-block">Please Enter Brand Name!</em>
+										<sf:errors path="brand" cssClass="help-block" element="em"></sf:errors>
 
 									</div>
 								</div>
@@ -73,7 +74,8 @@
 										<sf:textarea path="description" id="description" rows="4"
 											placeholder="Write a Product Description"
 											class="form-control"></sf:textarea>
-										<em class="help-block">Please Enter Product Description!</em>
+										<sf:errors path="description" cssClass="help-block"
+											element="em"></sf:errors>
 
 									</div>
 								</div>
@@ -88,7 +90,7 @@
 									<div class="col-md-8">
 										<sf:input type="number" path="unitPrice" id="unitPrice"
 											placeholder="Unit Price In &#8377;" class="form-control" />
-										<em class="help-block">Please Enter Unit Price!</em>
+										<sf:errors path="unitPrice" cssClass="help-block" element="em"></sf:errors>
 
 									</div>
 								</div>
@@ -102,11 +104,24 @@
 									<div class="col-md-8">
 										<sf:input type="number" path="quantity" id="quantity"
 											placeholder="Quantity Available" class="form-control" />
-										<em class="help-block">Please Enter Quantity Available!</em>
 
 									</div>
 								</div>
 							</div>
+
+							<!-- File element for Image Upload  -->
+							<div class="form-control no-border">
+								<div class="row">
+									<label class="control-label col-md-4" for="file"><strong>
+											Select an Image:</strong></label>
+									<div class="col-md-8">
+										<sf:input type="file" path="file" id="file"
+											class="form-control" />
+
+									</div>
+								</div>
+							</div>
+
 
 
 							<div class="form-control no-border">
@@ -117,7 +132,6 @@
 										<sf:select class="form-control" path="categoryId"
 											id="categoryId" items="${categories}" itemLabel="name"
 											itemValue="id" />
-
 
 									</div>
 								</div>
