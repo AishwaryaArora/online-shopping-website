@@ -121,6 +121,8 @@
 
 		<script src="${js}/dataTables.bootstrap4.js"></script>
 
+		<script src="${js}/bootbox.min.js"></script>
+
 		<!-- self coded js for myapp.js -->
 		<script src="${js}/myapp.js"></script>
 
