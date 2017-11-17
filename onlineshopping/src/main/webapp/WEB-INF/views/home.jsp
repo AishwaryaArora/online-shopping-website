@@ -1,3 +1,4 @@
+
 <div class="container">
 
 	<div class="row">
@@ -19,19 +20,25 @@
 					></li>
 					<li data-target="#carouselExampleIndicators" data-slide-to="2"
 					></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="3"
+					></li>
 				</ol>
 				<div class="carousel-inner" role="listbox">
 					<div class="carousel-item active">
-						<img class="d-block img-fluid" src="http://placehold.it/900x350"
+						<img class="d-block img-fluid" src="assets/images/img11.jpg"
 							alt="First slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block img-fluid" src="http://placehold.it/900x350"
+						<img class="d-block img-fluid" src="assets/images/img6.png"
 							alt="Second slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block img-fluid" src="http://placehold.it/900x350"
+						<img class="d-block img-fluid" src="assets/images/img10.jpg"
 							alt="Third slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block img-fluid" src="assets/images/img9.jpg"
+							alt="Fourth slide">
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -44,8 +51,23 @@
 					class="sr-only">Next</span>
 				</a>
 			</div>
-
+			
+			
+			
 			<div class="row">
+			<div class="my-4">
+			<iframe width="420" height="315"
+src="https://www.youtube.com/embed/PCvsMS4cWUU?autoplay=1">
+</iframe>
+			</div>
+			</div>
+			
+			
+			
+			 
+			
+
+		 	<%-- <div class="row">
 
 				<div class="col-lg-4 col-md-6 mb-4">
 					<div class="card h-100">
@@ -163,14 +185,17 @@
 					</div>
 				</div>
 
-			</div>
+			</div> --%>
 			<!-- /.row -->
+			
+			
 
 		</div>
 		<!-- /.col-lg-9 -->
 
 	</div>
 	<!-- /.row -->
+
 
 </div>
 <!-- /.container -->

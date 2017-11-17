@@ -1,5 +1,7 @@
 package net.aish.onlineshoppingbackend.dao;
 
+import java.util.List;
+
 //import java.util.List;
 
 import net.aish.onlineshoppingbackend.dto.Address;
@@ -14,14 +16,15 @@ public interface UserDAO {
 		
 		// add an address
 		boolean addAddress(Address address);
+		
 		// alternative
-		 //Address getBillingAddress(int userId);
-		 //List<Address> listShippingAddresses(int userId);
+		 Address getBillingAddress(int userId);
+		 List<Address> listShippingAddresses(int userId);
 		
 		//update a cart
 		boolean updateCart(Cart cart);
 		
-	/*	
+		/*
 		Address getBillingAddress(User user);
 		List<Address> listShippingAddresses(User user);
 	*/

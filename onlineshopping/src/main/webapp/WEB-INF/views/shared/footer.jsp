@@ -1,18 +1,25 @@
- <div class="container footer">
 
-        <hr>
+<div class="container footer">
 
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="m-0 text-left text-black">Copyright &copy; Shopping Way 2017 - Designed and
-						Developed By Aishwarya Arora</p>
-                </div>
-            </div>
-        </footer>
 
-    </div>
+	<!-- Footer -->
+	<footer>
+
+
+		<div class="row">
+		
+			<div class="col-lg-12">
+				<p class="m-0 text-left text-black">Copyright &copy; Shopping
+					Way 2017 - Designed and Developed By Aishwarya Arora</p>
+
+			</div>
+			
+		</div>
+
+	</footer>
+
+</div>
+
 
 
 
