@@ -11,6 +11,9 @@ http://www.springframework.org/schema/mvc
    http://www.springframework.org/schema/webflow-config
     http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
 
+	<context:annotation-config />
+
+
 	<mvc:annotation-driven />
 
 
@@ -45,31 +48,29 @@ http://www.springframework.org/schema/mvc
 		flow-builder-services="flowBuilderServices">
 		<wf:flow-location-pattern value="/**/*-flow.xml" />
 	</wf:flow-registry>
-	
+
 	<wf:flow-builder-services id="flowBuilderServices"
-		view-factory-creator="viewFactoryCreator"
-		validator="validator"
-	/>
-	
-	
+		view-factory-creator="viewFactoryCreator" validator="validator" />
+
+
 	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
 		<property name="flowExecutor" ref="flowExecutor" />
-	</bean>	
-	
+	</bean>
+
 	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
 		<property name="flowRegistry" ref="flowRegistry" />
 		<property name="order" value="-1" />
 	</bean>
-	
-	<bean id="viewFactoryCreator" 
+
+	<bean id="viewFactoryCreator"
 		class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
-         <property name="viewResolvers" ref="viewResolver"/>
- 	</bean>	
-	
-	<!-- validator bean  -->
+		<property name="viewResolvers" ref="viewResolver" />
+	</bean>
+
+	<!-- validator bean -->
 	<bean id="validator"
 		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
-	
+
 
 
 

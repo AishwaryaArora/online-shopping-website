@@ -56,6 +56,9 @@
 
 				<div class="col-lg-12">
 
+<div class="container-fluid">
+<div class="table-responsive">
+
 					<table id="productListTable"
 						class="table table-striped table-borderd">
 
@@ -85,8 +88,9 @@
 
 
 					</table>
+					</div>
 
-
+</div>
 
 
 

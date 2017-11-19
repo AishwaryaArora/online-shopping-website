@@ -1,59 +1,67 @@
 package net.aish.onlineshoppingbackend.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+
+import org.hibernate.validator.constraints.NotBlank;
+//import javax.persistence.ManyToOne;
 
 @Entity
-public class Address {
+public class Address implements Serializable {
 
 	/**
 	 * 
 	 */
-	//private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	/*
-	 * private fields
-	 * */
+
+	/**
+	 * 
+	 */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	
-	@ManyToOne
-	private User user;
+	@Column(name = "user_id")
+	private int userId;
 	
 	
-	public User getUser() {
-		return user;
+	
+
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	@Column(name = "address_line_one")
-	//@NotBlank(message = "Please enter address line one!")
+	@NotBlank(message = "Please enter address line one!")
 	private String addressLineOne;
 	
 	@Column(name = "address_line_two")	
-	//@NotBlank(message = "Please enter address line two!")
+	@NotBlank(message = "Please enter address line two!")
 	private String addressLineTwo;
 
-	//@NotBlank(message = "Please enter city name!")
+	@NotBlank(message = "Please enter city name!")
 	private String city;
 
-	//@NotBlank(message = "Please enter state name!")
+	@NotBlank(message = "Please enter state name!")
 	private String state;
 	
-	//@NotBlank(message = "Please enter country!")
+	@NotBlank(message = "Please enter country!")
 	private String country;
 	
 	@Column(name = "postal_code")
-	//@NotBlank(message = "Please enter postal code!")	
+	@NotBlank(message = "Please enter postal code!")	
 	private String postalCode;
 	
 	@Column(name = "is_shipping")
