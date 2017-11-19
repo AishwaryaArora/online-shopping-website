@@ -205,7 +205,7 @@
 		<div class="col-lg-12">
 			<div class="container-fluid">
 
-
+<div class="table-responsive">
 				<!-- Products table for Admin -->
 				<table id="adminProductsTable"
 					class="table table-striped table-bordered">
@@ -239,6 +239,7 @@
 
 
 			</div>
+		</div>	
 		</div>
 
 
