@@ -60,74 +60,91 @@
 src="https://www.youtube.com/embed/PCvsMS4cWUU?autoplay=1">
 </iframe>
 			</div>
+			
+			<div class="col-lg-6 col-md-6 mb-4">
+					<div class="card" style="width:25rem">
+						<a href="${contextRoot}/show/category/3/products"><img class="card-img-top"
+							src="assets/images/img15.jpg" alt=""></a>
+						<div class="card-body">
+							<h4 class="card-title">
+								<a href="${contextRoot}/show/category/3/products"><center>Smartphone Collection</center></a>
+							</h4>
+							<%-- <h5>$24.99</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur
+								adipisicing elit. Amet numquam aspernatur!</p> --%>
+						</div>
+						<%-- <div class="card-footer">
+							<small class="text-muted">&#9733; &#9733; &#9733; &#9733;
+								&#9734;</small> 
+						</div> --%>
+					</div>
+				</div>
+			
+			
 			</div>
 			
 			
-			
-			 
-			
 
-		 	<%-- <div class="row">
+		 	 <div class="row">
 
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="card h-100">
-						<a href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""></a>
+				<div class="col-lg-6 col-md-6 mb-4">
+					<div class="card" style="width:25rem">
+						<a href="${contextRoot}/show/category/1/products"><img class="card-img-top"
+							src="assets/images/img12.jpg" alt=""></a>
 						<div class="card-body">
 							<h4 class="card-title">
-								<a href="#">Item One</a>
+								<a href="${contextRoot}/show/category/1/products"><center>Laptop Collection</center></a>
 							</h4>
-							<h5>$24.99</h5>
+							<%-- <h5>$24.99</h5>
 							<p class="card-text">Lorem ipsum dolor sit amet, consectetur
-								adipisicing elit. Amet numquam aspernatur!</p>
+								adipisicing elit. Amet numquam aspernatur!</p> --%>
 						</div>
-						<div class="card-footer">
+						<%-- <div class="card-footer">
 							<small class="text-muted">&#9733; &#9733; &#9733; &#9733;
-								&#9734;</small>
-						</div>
+								&#9734;</small> 
+						</div> --%>
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="card h-100">
-						<a href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""></a>
+				<div class="col-lg-6 col-md-6 mb-4">
+					<div class="card h-100" style="width:25rem">
+						<a href="${contextRoot}/show/category/3/products"><img class="card-img-top"
+							src="assets/images/img13.jpg" alt=""></a>
 						<div class="card-body">
 							<h4 class="card-title">
-								<a href="#">Item Two</a>
+								<a href="${contextRoot}/show/category/3/products"><center>Mobile Collection</center></a>
 							</h4>
-							<h5>$24.99</h5>
+							<%-- <h5>$24.99</h5>
 							<p class="card-text">Lorem ipsum dolor sit amet, consectetur
 								adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit
-								amet.</p>
+								amet.</p> --%>
 						</div>
-						<div class="card-footer">
+						<%-- <div class="card-footer">
 							<small class="text-muted">&#9733; &#9733; &#9733; &#9733;
 								&#9734;</small>
-						</div>
+						</div> --%>
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="card h-100">
-						<a href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""></a>
+				 <div class="offset-lg-3 col-lg-6 col-md-6 mb-4">
+					<div class="card h-100" style="width:25rem">
+						<a href="${contextRoot}/show/98/product"><img class="card-img-top"
+							src="assets/images/img14.jpg" alt=""></a>
 						<div class="card-body">
 							<h4 class="card-title">
-								<a href="#">Item Three</a>
+								<a href="${contextRoot}/show/98/product"><center>One Indian Girl</center></a>
 							</h4>
-							<h5>$24.99</h5>
-							<p class="card-text">Lorem ipsum dolor sit amet, consectetur
-								adipisicing elit. Amet numquam aspernatur!</p>
+							<p class="card-text"><strong><center>One of the Best Selling Book in India!</center></strong></p>  
+							<h5><center>Only At &#8377;500</center></h5> 
 						</div>
-						<div class="card-footer">
+						<%-- <div class="card-footer">
 							<small class="text-muted">&#9733; &#9733; &#9733; &#9733;
 								&#9734;</small>
-						</div>
+						</div> --%>
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 mb-4">
+				<%-- <div class="col-lg-4 col-md-6 mb-4">
 					<div class="card h-100">
 						<a href="#"><img class="card-img-top"
 							src="http://placehold.it/700x400" alt=""></a>
@@ -183,9 +200,9 @@ src="https://www.youtube.com/embed/PCvsMS4cWUU?autoplay=1">
 								&#9734;</small>
 						</div>
 					</div>
-				</div>
+				</div> --%>
 
-			</div> --%>
+			</div> 
 			<!-- /.row -->
 			
 			

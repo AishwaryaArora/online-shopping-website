@@ -24,7 +24,7 @@
 				<security:authorize access="isAnonymous()">
 					<li id="register" class="nav-item"><a class="nav-link"
 						href="${contextRoot}/register"><h5>
-								<i class="fa fa-registered" aria-hidden="true"></i> Register
+								<i class="fa fa-user" aria-hidden="true"></i> Sign-Up
 							</h5></a></li>
 
 					<li id="login" class="nav-item"><a class="nav-link"
@@ -66,7 +66,7 @@
 							</security:authorize>
 
 							
-							<li><a href="${contextRoot}/perform-logout">Logout</a></li>
+							<li><a href="${contextRoot}/perform-logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
 
 
 						</ul></li>

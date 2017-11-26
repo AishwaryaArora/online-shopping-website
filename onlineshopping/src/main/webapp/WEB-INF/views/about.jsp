@@ -22,13 +22,12 @@ function myMap() {
     var mapOptions = {
         center: new google.maps.LatLng(28.38 , 77.12),
         zoom: 10,
-        mapTypeId: google.maps.MapTypeId.HYBRID
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBACNi5WPnodghJlZrie7gynlDvl7HpKEs&callback=myMap"></script>
 
 
 
