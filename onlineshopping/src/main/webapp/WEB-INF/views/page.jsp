@@ -109,6 +109,11 @@
 				<!-- Page Content -->
 				<%@include file="manageProducts.jsp"%>
 			</c:if>
+			
+			<c:if test="${userClickShowCart == true}">
+				<!-- Page Content -->
+				<%@include file="cart.jsp"%>
+			</c:if>
 
 		</div>
 

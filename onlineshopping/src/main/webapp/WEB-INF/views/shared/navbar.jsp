@@ -45,7 +45,7 @@
 
 
 				<security:authorize access="isAuthenticated()">
-					<li class="dropdown"><a href="javascript:void(0)"
+					<li class="dropdown" id="userCart"><a href="javascript:void(0)"
 						class="btn btn-primary dropdown-toggle" id="dropdownMenu1"
 						data-toggle="dropdown">${userModel.fullName} <span
 							class="caret"></span>
@@ -55,7 +55,7 @@
 						<ul class="dropdown-menu">
 
 							<security:authorize access="hasAuthority('USER')">
-								<li><a href="${contextRoot}/cart"> <i
+								<li><a class="dropdown-item" href="${contextRoot}/cart/show"> <i
 										class="fa fa-shopping-cart" aria-hidden="true"></i> <span
 										class="badge">${userModel.cart.cartLines}</span> - &#8377;
 										${userModel.cart.grandTotal}
@@ -66,7 +66,7 @@
 							</security:authorize>
 
 							
-							<li><a href="${contextRoot}/perform-logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+							<li><a class="dropdown-item" href="${contextRoot}/perform-logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
 
 
 						</ul></li>

@@ -115,7 +115,7 @@
 			
 
 			<a href="${contextRoot}/show/all/products" class="btn btn-primary">
-				Back</a>
+				<i class="fa fa-backward" aria-hidden="true"></i> Back</a>
 			     
 			     
 			     

@@ -22,7 +22,7 @@ public interface UserDAO {
 		 List<Address> listShippingAddresses(int userId);
 		
 		//update a cart
-		boolean updateCart(Cart cart);
+		//boolean updateCart(Cart cart);
 		
 		/*
 		Address getBillingAddress(User user);

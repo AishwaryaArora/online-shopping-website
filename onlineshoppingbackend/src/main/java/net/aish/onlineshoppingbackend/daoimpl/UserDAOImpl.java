@@ -43,7 +43,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
-	@Override
+	/*@Override
 	public boolean updateCart(Cart cart) {
 		try {
 
@@ -53,7 +53,7 @@ public class UserDAOImpl implements UserDAO {
 			ex.printStackTrace();
 			return false;
 		}
-	}
+	}*/
 
 	@Override
 	public User getByEmail(String email) {
