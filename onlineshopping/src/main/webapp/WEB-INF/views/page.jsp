@@ -80,10 +80,10 @@
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 
-			<%-- <c:if test="${userClickCategory == true}">
+			 <c:if test="${userClickOrder == true}">
 				<!-- Page Content -->
-				<%@include file="category.jsp"%>
-			</c:if> --%>
+				<%@include file="orderPlaced.jsp"%>
+			</c:if> 
 
 			<c:if test="${userClickRegister == true}">
 				<!-- Page Content -->

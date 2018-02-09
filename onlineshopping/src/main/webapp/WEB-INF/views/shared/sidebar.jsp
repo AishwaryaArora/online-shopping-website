@@ -1,7 +1,7 @@
 <h3 class="my-4">CATEGORY</h3>
 <div class="list-group">
 
-
+<%--below categories is coming from pagecontroller --%>
 	<c:forEach items="${categories}" var="category">
 		<a href="${contextRoot}/show/category/${category.id}/products" class="list-group-item" id="a_${category.name}"><h5>${category.name}</h5></a>
 	</c:forEach>

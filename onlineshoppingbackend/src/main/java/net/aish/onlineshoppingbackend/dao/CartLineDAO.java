@@ -4,6 +4,9 @@ import java.util.List;
 
 import net.aish.onlineshoppingbackend.dto.Cart;
 import net.aish.onlineshoppingbackend.dto.CartLine;
+import net.aish.onlineshoppingbackend.dto.OrderDetail;
+
+
 
 public interface CartLineDAO {
 
@@ -21,4 +24,10 @@ public interface CartLineDAO {
 		
 		// udpate a cart
 		boolean updateCart(Cart cart);	
+		
+		
+		// adding order details
+		boolean addOrderDetail(OrderDetail orderDetail);
+				
+		
 }

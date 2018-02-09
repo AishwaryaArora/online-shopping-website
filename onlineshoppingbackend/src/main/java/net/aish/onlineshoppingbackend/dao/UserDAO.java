@@ -28,4 +28,9 @@ public interface UserDAO {
 		Address getBillingAddress(User user);
 		List<Address> listShippingAddresses(User user);
 	*/
+		 
+		 Address getAddress(int addressId);
+		 
+		 
+		
 }

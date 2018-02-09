@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.aish.onlineshopping.service.CartService;
+import net.aish.onlineshoppingbackend.dao.CartLineDAO;
+import net.aish.onlineshoppingbackend.dto.CartLine;
 
 
 @Controller
@@ -20,31 +22,55 @@ public class CartController {
 	@Autowired
 	private CartService cartService;
 	
+	//@Autowired
+	//private CartLineDAO cartLineDAO;
+	
 	
 	@RequestMapping("/show")
-	public ModelAndView showCart(@RequestParam(name = "result", required=false)String result) {  
+	public ModelAndView showCart(@RequestParam(name = "result", required = false) String result) {
+		
 		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Shopping Cart");
+		mv.addObject("userClickShowCart", true);
+		
 		if(result!=null) {
 			switch(result) {
-			case "updated":
-					mv.addObject("message", "CartLine has been updated successfully!");
+				case "added":
+					mv.addObject("message", "Product has been successfully added inside cart!");					
+					cartService.validateCartLine();
 					break;
-			case "added":
-				mv.addObject("message", "CartLine has been added successfully!");
-				break;
-			case "deleted":
-				mv.addObject("message", "CartLine has been removed successfully!");
-				break;					
-			case "error":
-				mv.addObject("message", "Something went wrong!");
-				break;			
+				case "unavailable":
+					mv.addObject("message", "Product quantity is not available!");					
+					break;
+				case "updated":
+					mv.addObject("message", "Cart has been updated successfully!");					
+					cartService.validateCartLine();
+					break;
+				case "modified":
+					mv.addObject("message", "One or more items inside cart has been modified!");
+					break;
+				case "maximum":
+					mv.addObject("message", "Maximum limit for the item has been reached!");
+					break;
+				case "deleted":
+					mv.addObject("message", "CartLine has been successfully removed!");
+					break;
+
 			}
 		}
-		mv.addObject("title", "User Cart");
-		mv.addObject("userClickShowCart", true);
-		mv.addObject("cartLines", cartService.getCartLines());		
-		return mv;		
+		else {
+			String response = cartService.validateCartLine();
+			if(response.equals("result=modified")) {
+				mv.addObject("message", "One or more items inside cart has been modified!");
+			}
+		}
+
+		mv.addObject("cartLines", cartService.getCartLines());
+		return mv;
+		
 	}
+	
+	
 	
 	@RequestMapping("/{cartLineId}/update")
 	public String updateCart(@PathVariable int cartLineId, @RequestParam int count) {		
@@ -66,4 +92,25 @@ public class CartController {
 		return "redirect:/cart/show?"+response;
 		
 	}	
+	
+	
+	
+	/* after validating it redirect to checkout
+	 * if result received is success proceed to checkout 
+	 * else display the message to the user about the changes in cart page
+	 * */	
+	@RequestMapping("/validate")
+	public String validateCart() {	
+		String response = cartService.validateCartLine();
+		if(!response.equals("result=success")) {
+			return "redirect:/cart/show?"+response;
+		}
+		else {
+			return "redirect:/cart/checkout";
+		}
+	}	
+	
+	
+	
+	
 }

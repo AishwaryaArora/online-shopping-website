@@ -2,14 +2,19 @@ package net.aish.onlineshoppingbackend.daoimpl;
 
 import java.util.List;
 
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import net.aish.onlineshoppingbackend.dao.CartLineDAO;
+
 import net.aish.onlineshoppingbackend.dto.Cart;
 import net.aish.onlineshoppingbackend.dto.CartLine;
+import net.aish.onlineshoppingbackend.dto.OrderDetail;
+
+
 
 @Repository("cartLineDAO")
 @Transactional
@@ -113,5 +118,20 @@ try {
 			return false;	
 		}
 	}
+
+	@Override
+	public boolean addOrderDetail(OrderDetail orderDetail) {
+		try {			
+			sessionFactory.getCurrentSession().persist(orderDetail);			
+			return true;
+		}
+		catch(Exception ex) {
+			return false;
+		}
+	}
+
+	
+
+
 
 }
